@@ -1,0 +1,18 @@
+fib=[]
+fib.append(1)
+fib.append(2)
+endpoint=4000000
+
+def evenFibSum(endpoint):
+    sum=0
+    for i in range(2,endpoint):
+        fib.append(fib[-1]+fib[-2])
+        if fib[i]>endpoint:
+            break
+    
+    for i in range(len(fib)):
+        if (fib[i]%2==0):
+            sum+=fib[i]
+    return sum
+
+print(evenFibSum(endpoint))
