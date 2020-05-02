@@ -1,0 +1,34 @@
+primeNumberCheckLimit=100000 # can be change later if need
+primeArray=[]
+
+
+goal=600851475143
+primeFactors=[]
+
+
+#Let's define prime number condition
+for num in range(primeNumberCheckLimit + 1):
+   # all prime numbers are greater than 1
+   if num > 1:
+       for i in range(2, num):
+           if (num % i) == 0:
+               break
+       else:
+           primeArray.append(num)
+
+
+def largestPrimeFactor(goal):
+    newNum=goal
+    
+    for i in primeArray:
+        if newNum%i==0:
+            newNun=newNum/i
+            primeFactors.append(i)
+            continue
+
+    
+    return primeFactors[-1]
+
+print(largestPrimeFactor(goal))
+
+    
