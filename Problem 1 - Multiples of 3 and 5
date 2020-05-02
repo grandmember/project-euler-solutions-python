@@ -1,1 +1,15 @@
+belowBlaBla=1000
 
+def multiplesOf3and5(belowBlaBla):
+    bucket=[]
+    sum=0
+    for i in range(1000):
+        if (i%3==0 or i%5==0):
+            bucket.append(i)
+    
+    for i in bucket:
+        sum+=i
+    
+    return sum
+
+print(multiplesOf3and5(belowBlaBla))
